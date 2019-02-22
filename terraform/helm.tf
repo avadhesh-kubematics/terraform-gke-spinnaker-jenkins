@@ -56,10 +56,6 @@ resource "kubernetes_cluster_role_binding" "default" {
   depends_on = ["google_container_cluster.default"]
 }
 
-variable "acme_email" {
-  default = "ugo.enyioha@usableapps.io"
-}
-
 data "template_file" "jenkins_openapi_spec" {
   template = "${file("${path.module}/openapi_spec.yaml")}"
 

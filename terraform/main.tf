@@ -13,13 +13,13 @@ variable "network_name" {
 provider "google" {
   region = "${var.region}"
   credentials = "${file("terraform.json")}"
-  project = "fabled-era-223004"
+  project = "${var.project}"
 }
 
 provider "google-beta" {
   region = "${var.region}"
   credentials = "${file("terraform.json")}"
-  project = "fabled-era-223004"
+  project = "${var.project}"
 }
 
 data "google_client_config" "current" {}
